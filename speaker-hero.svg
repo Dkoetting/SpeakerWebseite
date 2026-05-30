@@ -1,0 +1,19 @@
+﻿<svg width="920" height="1180" viewBox="0 0 920 1180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Speaker Portrait Placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="920" y2="1180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B5FFF"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(690 250) rotate(126.027) scale(480 520)">
+      <stop stop-color="white" stop-opacity="0.44"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="920" height="1180" rx="38" fill="url(#bg)"/>
+  <rect width="920" height="1180" rx="38" fill="url(#glow)"/>
+  <circle cx="455" cy="380" r="150" fill="#EAF1FF" fill-opacity="0.95"/>
+  <path d="M178 1048C178 852.327 336.327 694 532 694H534C729.673 694 888 852.327 888 1048V1080H178V1048Z" fill="#EAF1FF" fill-opacity="0.95"/>
+  <text x="64" y="112" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Dr. Dirk Kötting</text>
+  <text x="64" y="164" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="28" opacity="0.95">AI Governance Speaker</text>
+  <text x="64" y="1098" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" opacity="0.92">Platzhalterbild - bitte mit Originalfoto ersetzen</text>
+</svg>
