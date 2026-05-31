@@ -1,13 +1,15 @@
 ﻿const LINKS = {
-  k3Test: 'mailto:dr-dirk@dirkinstitute.org?subject=Anfrage%20300-Sekunden-Test%C2%AE',
-  leseprobe: 'https://example.com/agentic-sovereignty-leseprobe',
+  k3Test: 'mailto:dr-dirk@dirkinstitute.org?subject=Anfrage%20300-Sekunden-Test',
+  leseprobe: 'https://drive.google.com/file/d/1mtodaseULNFLNHyqWTcK-IJ6ss4U3n6b/view?usp=sharing',
   terminbuchung: 'https://terminbuchung-ten.vercel.app/',
+  onepager: 'https://drive.google.com/file/d/1J7lSTzz60DhaYrTniKfcQm0hdtj6FaXG/view?usp=sharing',
 };
 
 const linkMap = {
   'k3-test': LINKS.k3Test,
   leseprobe: LINKS.leseprobe,
   terminbuchung: LINKS.terminbuchung,
+  onepager: LINKS.onepager,
 };
 
 document.querySelectorAll('[data-link]').forEach((el) => {
@@ -56,8 +58,4 @@ if (form) {
     window.location.href = `mailto:dr-dirk@dirkinstitute.org?subject=${subject}&body=${body}`;
   });
 }
-
-
-
-
 
