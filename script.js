@@ -1,5 +1,5 @@
 ﻿const LINKS = {
-  k3Test: 'mailto:dr-dirk@dirkinstitute.org?subject=Anfrage%20300-Sekunden-Test',
+  k3Test: 'mailto:dr-dirk@dr-dirkinstitute.org?subject=Anfrage%20Agency-Radius-Check',
   leseprobe: 'https://drive.google.com/file/d/1mtodaseULNFLNHyqWTcK-IJ6ss4U3n6b/view?usp=sharing',
   terminbuchung: 'https://terminbuchung-ten.vercel.app/',
   onepager: 'https://drive.google.com/file/d/1J7lSTzz60DhaYrTniKfcQm0hdtj6FaXG/view?usp=sharing',
@@ -55,7 +55,7 @@ if (form) {
       `Name: ${name}\nUnternehmen: ${unternehmen}\nE-Mail: ${email}\nAnlass: ${anlass}\n\nKurzbeschreibung:\n${nachricht}`
     );
 
-    window.location.href = `mailto:dr-dirk@dirkinstitute.org?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:dr-dirk@dr-dirkinstitute.org?subject=${subject}&body=${body}`;
   });
 }
 
