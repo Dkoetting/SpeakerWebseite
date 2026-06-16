@@ -59,3 +59,52 @@ if (form) {
   });
 }
 
+const governanceCheckForm = document.getElementById('governance-check-form');
+const scoreNumber = document.getElementById('score-number');
+const scoreText = document.getElementById('score-text');
+const checkerMailLink = document.getElementById('checker-mail-link');
+
+if (governanceCheckForm && scoreNumber && scoreText) {
+  const updateScore = () => {
+    const answers = Array.from(governanceCheckForm.querySelectorAll('input[type="radio"]:checked'));
+    const score = answers.reduce((sum, input) => sum + Number(input.value), 0);
+    const total = governanceCheckForm.querySelectorAll('fieldset').length;
+    const panel = scoreNumber.closest('.route-panel');
+
+    scoreNumber.textContent = `${score}/${total}`;
+    panel.classList.remove('score-low', 'score-medium', 'score-high');
+
+    let message = 'Beantworten Sie die Fragen, um eine erste Einschätzung zu erhalten.';
+    let level = 'offen';
+
+    if (answers.length === total) {
+      if (score <= 3) {
+        message = 'Hoher Klärungsbedarf: Verantwortung, Nachweise oder Autonomiegrenzen sind noch nicht belastbar genug strukturiert.';
+        level = 'hoher Klaerungsbedarf';
+        panel.classList.add('score-low');
+      } else if (score <= 5) {
+        message = 'Teilweise belastbar: Es gibt Grundlagen, aber zentrale Governance- und Nachweisfragen sollten gezielt verdichtet werden.';
+        level = 'teilweise belastbar';
+        panel.classList.add('score-medium');
+      } else {
+        message = 'Gute Ausgangslage: Die Organisation wirkt governance-bewusst, sollte Agency Radius und Nachweise dennoch fachlich prüfen.';
+        level = 'gute Ausgangslage';
+        panel.classList.add('score-high');
+      }
+    }
+
+    scoreText.textContent = message;
+
+    if (checkerMailLink) {
+      const subject = encodeURIComponent(`Schnellcheck-Auswertung ${score}/${total}`);
+      const body = encodeURIComponent(
+        `Hallo Dr. Dirk Kötting,\n\nwir möchten den EU AI Act und Governance-Ready Schnellcheck auswerten.\n\nErgebnis: ${score}/${total}\nEinschätzung: ${level}\n\nBitte melden Sie sich zur kurzen Einordnung.\n`
+      );
+      checkerMailLink.href = `mailto:dr-dirk@dr-dirkinstitute.org?subject=${subject}&body=${body}`;
+    }
+  };
+
+  governanceCheckForm.addEventListener('change', updateScore);
+  updateScore();
+}
+
